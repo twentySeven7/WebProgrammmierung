@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor(_vorname, _nachname, _adresse, _universität, _fakultät, _studiengang) {
+                this.vorname = _vorname;
+                this.nachname = _nachname;
+                this.adresse = _adresse;
+                this.universität = _universität;
+                this.fakultät = _fakultät;
+                this.studiengang = _studiengang
+            }
+        }
+
+        var zahl = prompt("Please enter a number");
+        var fak = zahl;
+        zahl = zahl - 1;
+        while (zahl > 0) {
+            fak = fak * zahl;
+            zahl--;
+        }
+        if (isNaN(zahl)) {
+            alert("Bitte eine Zahl eingeben");
+        } else if (zahl < 0) {
+            alert("Bitte eine positive Zahl eingeben");
+        } else if (zahl == 0) {
+            alert(1);
+        }
+        else {
+            alert(fak);
+        }
+        var students = [new Student("Max", "Mustermann", "In der Breite 12", "Hochschule Weingarten", "E", "Informatik")]
+        console.log(students);
+
+    </script>
+</body>
+
+</html>
