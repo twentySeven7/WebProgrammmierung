@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var requestURL = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=jgxpEsPu8axwDh3MrAYfyAcZ65K3ZNtT";
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+        var data;
+        var articleNumber = 0;
+        request.onload = function () {
+            data = request.response;
+            console.log(data);
+            var obj = data.results;
+            console.log(obj);
+            document.getElementById("articleÜberschrift").innerHTML = obj[articleNumber].title;
+            document.getElementsByClassName("links")[0].src = obj[articleNumber].media[0]['media-metadata'][2].url;
+            var text = document.getElementById("nebenbildText");
+            var link_elem = document.createElement('a');
+            link_elem.href = obj[articleNumber].url;
+            link_elem.target = "_blank";
+            link_elem.rel = "noopener";
+            var text_elem = document.createTextNode("Read article");
+            link_elem.appendChild(text_elem);
+            var abstract_text = document.createTextNode(obj[articleNumber].abstract);
+            text.appendChild(abstract_text);
+            text.appendChild(link_elem);
+
+            document.getElementById("nextArticleButton").addEventListener("click", nextArticle);
+            function nextArticle() {
+                articleNumber++;
+                refreshArticle(articleNumber);
+                console.log(articleNumber);
+            }
+            function refreshArticle(articleNumber) {
+                document.getElementById("articleÜberschrift").innerHTML = obj[articleNumber].title;
+                document.getElementsByClassName("links")[0].src = obj[articleNumber].media[0]['media-metadata'][2].url;
+                var text = document.getElementById("nebenbildText");
+                //Text und Weiterleitung noch anpassen
+
+                var link_elem = document.createElement('a');
+                link_elem.href = obj[articleNumber].url;
+                link_elem.target = "_blank";
+                link_elem.rel = "noopener";
+                var text_elem = document.createTextNode("Read article");
+                link_elem.appendChild(text_elem);
+                var abstract_text = document.createTextNode(obj[articleNumber].abstract);
+                text.appendChild(abstract_text);
+                text.appendChild(link_elem);
+            }
+        }
+
+
+    </script>
+    <h1>Most viewed NYT-articles</h1>
+
+    <article>
+        <h2 id="articleÜberschrift"></h2>
+
+        <img class="links">
+        <div id="nebenbildText">
+        </div>
+        <button id="nextArticleButton">Next Article</button>
+    </article>
+</body>
+
+</html>

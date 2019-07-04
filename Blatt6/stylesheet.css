@@ -1,0 +1,22 @@
+*{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+article {
+    background-color: dodgerblue;  
+    height: 300px;
+}
+.links {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#nextArticleButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: blue;
+}
