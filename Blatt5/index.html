@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        var groesse = prompt("Bitte die Größe des Arrays angeben");
+        var benutzerArray = [];
+        for (var i = 0; i < groesse; i++) {
+            benutzerArray.push(prompt("Bitte eine Zahl eingeben"))
+        }
+        alert(benutzerArray);
+        var mittelwert = mittelwertBerechnen(benutzerArray);
+        alert("Mittelwert mit einer \"normalen\" Funktion berechen " + mittelwert);
+
+        //"normale" Funktion
+        function mittelwertBerechnen(arr) {
+            var mittelwert = 0;
+            arr.forEach(function (element) {
+                mittelwert += Number(element);
+            });
+            mittelwert = mittelwert / arr.length;
+            return mittelwert;
+        }
+        //Anonyme Funktion
+        var mittelwertBerechnen2 = function(arr){
+            var mw = 0;
+            arr.forEach(function(element){
+                mw += Number(element);
+            });
+            mw = mw/arr.length;
+            return mw;
+        }
+        alert("Mittelwert mit einer anonymen Funktion berechen " + mittelwertBerechnen2(benutzerArray));
+
+        //Arrow Funktion
+        var mittelwertBerechnen3 = (arr) => {
+            var mw = 0;
+            arr.forEach(function (element){
+                mw += Number(element);
+            });
+            mw = mw/arr.length;
+            return mw;
+        }
+        alert("Mittelwert mit einer Arrow Funktion berechnen " + mittelwertBerechnen3(benutzerArray));
+
+        //Array auf gerade Zahlen filtern
+        var benutzerArrayGerade = benutzerArray.filter(zahlen => zahlen % 2 == 0);
+        alert("Mittelwert von allen geraden Zahlen im Array " + mittelwertBerechnen(benutzerArrayGerade));
+
+        //Zweites Array mit den doppelten Werten 
+        var benutzerArrayDoppel = benutzerArray.map(x => x*2);
+        alert("Array mit dem doppelten Wert der eingegebenen Zahlen " + benutzerArrayDoppel);
+
+        //Produkt von allen Zahlen mit der reduce() Methode
+        var reducer = (accumulator, currentValue) => accumulator * currentValue;
+        var benutzerArrayProdukt = benutzerArray.reduce(reducer)
+        alert("Produkt von allen Zahlen " + benutzerArrayProdukt);
+    </script>
+</body>
+
+</html>
