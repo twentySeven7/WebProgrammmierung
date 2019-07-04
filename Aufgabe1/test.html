@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Übungsblatt 1</title>
+
+    <style>
+        #ersteSpalte {
+            background-color: dodgerblue;
+        }
+
+        #zweiteSpalte {
+            background-color: gold
+        }
+
+        #dritteSpalte {
+            background-color: orange
+        }
+
+        .tdalign {
+            vertical-align: top;
+        }
+
+        #tableAlign {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            border-spacing: 10px;
+
+        }
+
+        #tableTitleBackground {
+            background-color: white;
+        }
+
+        #tableCaption {
+            text-align: left;
+            font-family: Arial;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="tableAlign">
+        <caption id="tableCaption">Meine Lieblingsrezepte</caption>
+        <colgroup>
+            <col id="ersteSpalte">
+            <col id="zweiteSpalte">
+            <col id="dritteSpalte">
+        </colgroup>
+        <tr>
+            <td class="tdalign">
+                <h3>Cookies</h3>
+                <img src="kekse.jpg" width=300 height=300 alt="Ein Bild von Keksen">
+                <p>Für dieses Rezept benötigen wir:</p>
+                <ul>
+                    <li>400g Mehl</li>
+                    <li>2000g Zucker</li>
+                    <li>etc.</li>
+                </ul>
+
+            </td>
+            <td class="tdalign">
+                <h3>Schokokuchen</h3>
+                <img src="schokokuchen.jpg" width=300 height=300 alt="Ein Bild von einem Schokokuchen">
+                Hier kommen Sie zum <a href="https://wiki.selfhtml.org/wiki/HTML/Textauszeichnung/a" target="_blank"
+                    rel="noopener">Original Rezept</a>
+                <ul>
+                    <li>1kg Schokolade</li>
+                    <li>2000g Zucker</li>
+                    <li>etc.</li>
+                </ul>
+
+            </td>
+            <td class="tdalign">
+                <h3>Smoothie</h3>
+                <img src="https://static.essen-und-trinken.de/bilder/50/e6/59125/galleryimage/rhabarber-erdbeer-smoothie.jpg"
+                     width=300 height=300 alt="Ein Bild von einem ErdbeerSmoothie">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
