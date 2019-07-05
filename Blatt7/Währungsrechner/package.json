@@ -1,0 +1,17 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Für WebProgrammierung 2019",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Hülsing",
+  "license": "ISC",
+  "scripts": {"build": "webpack","test": "echo \"Error: no test specified\" && exit 1","serve": "webpack-dev-server"}
+}
